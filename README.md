@@ -33,4 +33,4 @@ image-gallery/
 
 ## Author
 
-[Adzorge Richard Quarshie]
+Adzorge Richard Quarshie
