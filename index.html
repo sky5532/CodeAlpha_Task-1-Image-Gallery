@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+Project: Image Gallery (Internship Task 1)
+Description: Responsive image gallery with lightbox view, next/prev navigation,
+hover effects, and category filtering.
+Author: [Adzorge Richard Quarshie]
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image Gallery</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <meta name="description" content="A responsive image gallery built with HTML, CSS, and JavaScript, featuring a lightbox view, next/prev navigation, and category filters.">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="people">People</button>
+            <button class="filter-btn" data-filter="places">Places</button>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item" data-category="people">
+                <img src="Images/Photo1.jpg" alt="Photo1">
+            </div>
+            <div class="gallery-item" data-category="people">
+                <img src="Images/Photo2.jpeg" alt="Photo2">
+            </div>
+            <div class="gallery-item" data-category="people">
+                <img src="Images/Photo3.jpg" alt="Photo3">
+            </div>
+            <div class="gallery-item" data-category="people">
+                <img src="Images/Photo4.jpg" alt="Photo4">
+            </div>
+            <div class="gallery-item" data-category="nature">
+                <img src="Images/Photo5.jpg" alt="Photo5"> 
+            </div>
+            <div class="gallery-item" data-category="nature">
+                <img src="Images/Photo6.jpg" alt="Photo6">
+            </div>
+        <div class="gallery-item" data-category="nature">
+            <img src="Images/Photo7.jpg" alt="Photo7">
+        </div>
+        <div class="gallery-item" data-category="places">
+            <img src="Images/Photo8.jpg" alt="Photo8">
+        </div>
+        <div class="gallery-item" data-category="places">
+            <img src="Images/Photo9.jpg" alt="Photo9">
+        </div>
+        <div class="gallery-item" data-category="places">
+            <img src="Images/Photo10.jpeg" alt="Photo10">
+        </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <span class="prev-btn" id="prevBtn">&#10094;</span>
+            <img class="lightbox-img" id="lightboxImg" src="" alt="">
+            <span class="next-btn" id="nextBtn">&#10095;</span>
+        </div> 
+
+        <script src="script.js"></script>
+    </body>
+    </html>
