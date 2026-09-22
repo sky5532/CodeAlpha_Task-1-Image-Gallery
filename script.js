@@ -113,3 +113,100 @@ filterBtns.forEach((btn) => {
         updateLightboxImage();
     });
 });
+
+const menuDots = document.getElementById('menuDots');
+const dropdownMenu = document.getElementById('dropdownMenu');
+
+menuDots.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle('active');
+});
+
+document.addEventListener('click', () => {
+    dropdownMenu.classList.remove('active');
+});
+
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const sideMenu = document.getElementById('sideMenu');
+
+hamburgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    sideMenu.classList.toggle('active');
+});
+
+document.addEventListener('click', () => {
+    sideMenu.classList.remove('active');
+});
+
+const searchInput = document.getElementById('searchInput');
+
+searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+
+    galleryItems.forEach((item) => {
+        const category = item.dataset.category.toLowerCase();
+        if (category.includes (searchTerm)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+})
+
+const sideMenuItems = document.querySelectorAll('.side-menu-item');
+
+sideMenuItems.forEach((item) => {
+    item.addEventListener('click', () => {
+        alert(`${item.textContent} view is coming soon!`);
+        sideMenu.classList.remove('active');
+    });
+});
+
+const navBtns = document.querySelectorAll('.nav-btn[data-tab]');
+const galleryEl = document.querySelector('.gallery');
+const filtersEl = document.querySelector('.filters');
+const albumsView = document.getElementById('albumsView');
+
+navBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        navBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const tab = btn.dataset.tab;
+        
+        if (tab === 'photos') {
+           galleryEl.style.display = 'grid';
+           filtersEl.style.display = 'flex';
+           albumsView.classList.remove('active');
+        } else if (tab === 'albums') {
+            galleryEl.style.display = 'none';
+            filtersEl.style.display = 'none';
+            albumsView.classList.add('active');
+        }
+        });
+    });
+
+const albumCards = document.querySelectorAll('.album-card');
+
+albumCards.forEach((card) => {
+    card.addEventListener('click', () => {
+        const album = card.dataset.album;
+
+        activeFilter = VALID_FILTERS.has(album) ? album : 'all';
+
+        filterBtns.forEach((b) => {
+            b.classList.toggle('active', b.dataset.filter === activeFilter);
+        });
+        galleryItems.forEach((item) => {
+            const isVisible = activeFilter === 'all' || item.dataset.category === activeFilter;
+            item.style.display = isVisible ? 'block' : 'none';
+        });
+
+        navBtns.forEach((b) => b.classList.remove('active'));
+        document.querySelector('.nav-btn[data-tab="photos"]').classList.add('active');
+
+        galleryEl.style.display = 'grid';
+        filtersEl.style.display = 'flex';
+        albumsView.classList.remove('active');
+    });
+});
