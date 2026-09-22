@@ -15,6 +15,18 @@ Author: [Adzorge Richard Quarshie]
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <div class="top-bar">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search photos...">
+            <div class="menu-wrapper">
+                <button id="menuDots" class="dots-btn">&#8942;</button>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <button class="dropdown-item">Edit</button>
+                    <button class="dropdown-item">Create</button>
+                    <button class="dropdown-item">Sort by name</button>
+                    <button class="dropdown-item">Select all</button>
+                </div>
+            </div>
+        </div>
         <div class="filters">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="nature">Nature</button>
@@ -53,6 +65,20 @@ Author: [Adzorge Richard Quarshie]
             <img src="Images/Photo10.jpeg" alt="Photo10">
         </div>
         </div>
+        <div class="albums-view" id="albumsView">
+            <div class="album-card" data-album="nature">
+                <img src="Images/Photo5.jpg" alt="Nature album">
+                <p>Nature</p>
+            </div>
+            <div class="album-card" data-album="people">
+                <img src="Images/Photo1.jpg" alt="People Album">
+                <p>People</p>
+            </div>
+            <div class="album-card" data-album="places">
+                <img src="Images/Photo8.jpg" alt="Places album">
+                <p>Places</p>
+            </div>
+        </div>
 
         <!-- Lightbox -->
         <div class="lightbox" id="lightbox">
@@ -61,6 +87,32 @@ Author: [Adzorge Richard Quarshie]
             <img class="lightbox-img" id="lightboxImg" src="" alt="">
             <span class="next-btn" id="nextBtn">&#10095;</span>
         </div> 
+
+        <!-- Bottom navigation-->
+         <div class="bottom-nav">
+            <button class="nav-btn active" data-tab="photos">
+                <span class="nav-icon">&#128247;</span>
+                Photos
+            </button>
+            <button class="nav-btn" data-tab="albums">
+                <span class="nav-icon">&#128193;</span>
+                Albums
+            </button>
+            <button id="hamburgerBtn" class="nav-btn">
+                <span class="nav-icon">&#9776;</span>
+                Menu
+            </button>      
+         </div>
+
+         <!-- Hamburger side menu -->
+         <div class="side-menu" id="sideMenu">
+            <button class="side-menu-item" data-action="videos">Videos</button>
+            <button class="side-menu-item" data-action="favorites">Favorites</button>
+            <button class="side-menu-item" data-action="recent">Recent</button>
+            <button class="side-menu-item" data-action="locations">Locations</button>
+            <button class="side-menu-item" data-action="trash">Trash</button>
+            <button class="side-menu-item" data-action="settings">Settings</button>
+         </div>
 
         <script src="script.js"></script>
     </body>
