@@ -14,6 +14,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     padding: 20px;
+    padding-bottom: 70px;
 }
 
 .gallery {
@@ -124,4 +125,167 @@ body {
 .filter-btn.active {
     background-color: #333;
     color: #fff;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-input:focus{
+    border-color: #333;
+}
+
+.menu-wrapper {
+    position: relative;
+}
+
+.dots-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.dropdown-menu {
+    display: none;
+    position:absolute;
+    right: 0;
+    top: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 160px;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.dropdown-menu.active {
+display: block;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+    background: #f0f0f0;
+}
+
+.bottom-nav {
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+    z-index: 500;
+}
+
+.nav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.nav-icon {
+    font-size: 1.4rem;
+}
+
+.nav-btn.active {
+    color: #333;
+    font-weight: bold;
+}
+
+.side-menu {
+    display: none;
+    position:fixed;
+    bottom: 60px;
+    right: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    z-index: 600;
+}
+
+.side-menu.active {
+    display: block;
+}
+
+.side-menu-item {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.side-menu-item:hover {
+    background: #f0f0f0;
+}
+
+.albums-view {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.albums-view.active {
+    display: grid;
+}
+
+.album-card {
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.album-card p {
+    padding: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.album-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
 }
