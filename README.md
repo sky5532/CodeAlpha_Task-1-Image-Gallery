@@ -1,5 +1,7 @@
 # Image Gallery - Internship Task 1
 
+🔗 **Live Demo:** [https://sky5532.github.io/CodeAlpha_Task-1-Image-Gallery/](https://sky5532.github.io/CodeAlpha_Task-1-Image-Gallery/)
+
 A responsive image gallery built with HTML, CSS, and vanilla JavaScript.
 
 ## Features
